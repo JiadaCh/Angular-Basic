@@ -1,0 +1,24 @@
+<h1>Exercice 9</h1>
+<h2>*ngFor - Classes</h2>
+<b>Employees:</b>
+<div>
+  Sort by
+  <select [(ngModel)]="selection" (selectionchange)="sortEmployees()">
+    <option [value]="i" *ngFor="let i of sortBy">{{i}}</option>
+  </select>
+  <select [(ngModel)]="modo" (selectionchange)="sortEmployees()">
+    <option [value]="'Ascending'" >Ascending</option>
+    <option [value]="'Descending'">Descending</option>
+  </select>
+  <button (click)="sortEmployees()">Sort</button>
+</div>
+<table class="table-bordered table-hover">
+  <tr>
+    <th>Name</th><th>Position</th><th>Salary</th>
+  </tr>
+  <tr *ngFor="let e of employees">
+    <td>{{ e.name }}</td>
+    <td>{{ e.position }}</td>
+    <td>{{ e.salary }}</td>
+  </tr>
+</table>

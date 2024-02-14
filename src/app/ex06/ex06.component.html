@@ -1,0 +1,11 @@
+<h1>Exercice 6</h1>
+<h2>Fahrenheit/Celsius conversion</h2>
+<form [formGroup]="rForm">
+Celcius:
+<input [(ngModel)]="celcius" (keyup)="converToFahrenheit()" type="text" formControlName="celcius">
+<br>
+Fahrenheit:
+<input [(ngModel)]="fahrenheit" (keyup)="convertToCelcius()" type="text" formControlName="fahrenheit">
+<br>
+<button (click)="clear()">Reset</button>
+</form>
