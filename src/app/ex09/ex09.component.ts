@@ -14,25 +14,18 @@ import {FormsModule} from "@angular/forms";
   templateUrl: './ex09.component.html'
 })
 export class Ex09Component {
- employees: Employee[] = [];
-  sortBy:string[] = ["Name","Salary","Position"];
-  selection:string = "Name";
+  employees: Employee[] = [];
+  sortBy:string[] = ["name","salary","position"];
+  selection:keyof Employee= "name";
   modo:string = "Ascending";
   constructor() { }
 
-  sortEmployees() {
-    if (this.selection === "Salary" && this.modo==="Ascending")
-      this.employees = this.employees.sort((a, b) => a.salary-b.salary)
-    else if (this.selection === "Salary" && this.modo==="Descending")
-      this.employees = this.employees.sort((a, b) => b.salary-a.salary)
-    else if (this.selection === "Position" && this.modo==="Ascending")
-      this.employees = this.employees.sort((a, b) => a.position.localeCompare(b.position))
-    else if (this.selection === "Position" && this.modo==="Descending")
-      this.employees = this.employees.sort((a, b) => a.position.localeCompare(b.position)).reverse()
-    else if (this.selection === "Name" && this.modo==="Descending")
-      this.employees = this.employees.sort((a, b) => a.name.localeCompare(b.name)).reverse()
-    else if (this.selection === "Name" && this.modo==="Ascending")
-      this.employees = this.employees.sort((a, b) => a.name.localeCompare(b.name));
+  sortEmployees(emplKey:keyof Employee,modo:String) {
+      this.employees = this.employees.sort((a, b) => a[emplKey]>=b[emplKey] ? 1:-1)
+      console.log(emplKey)
+
+    if (modo === "Descending")
+      this.employees = this.employees.sort((a, b) => a[emplKey]>=b[emplKey] ? 1:-1).reverse()
   }
 
   ngOnInit(): void {

@@ -3,10 +3,10 @@
 <b>Employees:</b>
 <div>
   Sort by
-  <select [(ngModel)]="selection" (change)="sortEmployees()">
+  <select [(ngModel)]="selection" (change)="sortEmployees(selection,modo)">
     <option [value]="i" *ngFor="let i of sortBy">{{i}}</option>
   </select>
-  <select [(ngModel)]="modo" (change)="sortEmployees()">
+  <select [(ngModel)]="modo" (change)="sortEmployees(selection,modo)">
     <option [value]="'Ascending'" >Ascending</option>
     <option [value]="'Descending'">Descending</option>
   </select>
