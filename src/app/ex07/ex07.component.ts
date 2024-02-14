@@ -24,6 +24,12 @@ export class Ex07Component {
   }
   ngOnInit(): void {
     this.numbers = [1, 5, 8, 24, 32, 11, 55];
-    this.fruits = ["pear", "apple", "mango", "watermelon", "kiwi","banana"];
+    this.fruits = ["pear", "apple", "mango", "watermelon", "kiwi","banana","as"];
+    this.ordernar();
+  }
+
+  ordernar(){
+    this.numbers.sort((a, b) => a-b);
+    this.fruits.sort();
   }
 }

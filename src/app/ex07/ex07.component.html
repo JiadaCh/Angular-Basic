@@ -4,14 +4,14 @@
 <b>Numbers:</b>
 <br>
 <p >
-  <span *ngFor="let n of numbers.sort()">
+  <span *ngFor="let n of numbers" >
   {{n}}
 </span>
 </p>
 
 
 <b>Fruits:<input type="text" [(ngModel)]="fruit" (keyup)="estar()"></b>
-<p *ngFor="let f of fruits.sort()">
+<p *ngFor="let f of fruits">
   {{ f }}
 </p>
 
