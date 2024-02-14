@@ -3,14 +3,13 @@
 <b>Employees:</b>
 <div>
   Sort by
-  <select [(ngModel)]="selection" (selectionchange)="sortEmployees()">
+  <select [(ngModel)]="selection" (change)="sortEmployees()">
     <option [value]="i" *ngFor="let i of sortBy">{{i}}</option>
   </select>
-  <select [(ngModel)]="modo" (selectionchange)="sortEmployees()">
+  <select [(ngModel)]="modo" (change)="sortEmployees()">
     <option [value]="'Ascending'" >Ascending</option>
     <option [value]="'Descending'">Descending</option>
   </select>
-  <button (click)="sortEmployees()">Sort</button>
 </div>
 <table class="table-bordered table-hover">
   <tr>
