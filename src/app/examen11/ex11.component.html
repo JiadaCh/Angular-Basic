@@ -1,16 +1,16 @@
 <h1>Examen </h1>
 <form [formGroup]="rForm" >
   Name:
-  <input  type="text" formControlName="nombre" [(ngModel)]="employee.name">
+  <input  type="text" formControlName="nombre" >
   <br>
   Position:
-  <input type="text" formControlName="position" [(ngModel)]="employee.position" >
+  <input type="text" formControlName="position" >
   <br>
   Salary:
-  <input  type="text" formControlName="salary" [(ngModel)]="employee.salary">
+  <input  type="text" formControlName="salary">
   <br>
   Age:
-  <input type="text" formControlName="age" [(ngModel)]="employee.age" >
+  <input type="text" formControlName="age">
   <br>
   <input type="submit" (click)="submit()" [disabled]="!rForm.valid">
 </form>

@@ -20,12 +20,7 @@ export class Ex11Component {
   sortBy:string[] = ["name","salary","position","age"];
   selection:keyof Employee= "name";
   modo:string = "Ascending";
-  employee:Employee = {
-    name:"",
-    position:"",
-    salary: 500,
-    age: 18
-  };
+  employee:any;
   constructor(private fb: FormBuilder) { }
   rForm = this.fb.group({
     nombre: ['', [Validators.required, Validators.pattern("^[A-Z][a-z]*$")]],
@@ -40,10 +35,18 @@ export class Ex11Component {
     if (modo === "Descending")
       this.employees = this.employees.sort((a, b) => a[emplKey]>=b[emplKey] ? 1:-1).reverse()
   }
+
   submit(): void {
+    this.employee = {
+      name:this.rForm.value.nombre ? this.rForm.value.nombre : '',
+      position:this.rForm.value.position ? this.rForm.value.position : '',
+      salary:this.rForm.value.salary ? Number(this.rForm.value.salary)  : 500,
+      age:this.rForm.value.age ? Number(this.rForm.value.age) : 18,
+    }
     EMPLOYEE_LIST.push(this.employee)
     console.log(EMPLOYEE_LIST)
   }
+
   ngOnInit(): void {
     this.employees = EMPLOYEE_LIST;
 
