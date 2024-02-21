@@ -15,14 +15,13 @@ import {FormsModule} from "@angular/forms";
 })
 export class Ex09Component {
   employees: Employee[] = [];
-  sortBy:string[] = ["name","salary","position"];
+  sortBy:string[] = ["name","salary","position","age"];
   selection:keyof Employee= "name";
   modo:string = "Ascending";
   constructor() { }
 
   sortEmployees(emplKey:keyof Employee,modo:String) {
       this.employees = this.employees.sort((a, b) => a[emplKey]>=b[emplKey] ? 1:-1)
-      console.log(emplKey)
 
     if (modo === "Descending")
       this.employees = this.employees.sort((a, b) => a[emplKey]>=b[emplKey] ? 1:-1).reverse()

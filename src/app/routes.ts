@@ -9,6 +9,7 @@ import {Ex07Component} from "./ex07/ex07.component";
 import {Ex08Component} from "./ex08/ex08.component";
 import {Ex09Component} from "./ex09/ex09.component";
 import {Ex10Component} from "./ex10/ex10.component";
+import {Ex11Component} from "./examen11/ex11.component";
 
  const routeConfig: Routes = [{
   path: 'ex01',
@@ -58,5 +59,9 @@ import {Ex10Component} from "./ex10/ex10.component";
     path: 'ex10',
     component: Ex10Component,
     title: 'ex10',
-  }];
+  },{
+     path: 'examen11',
+     component: Ex11Component,
+     title: 'ex11',
+   }];
 export default routeConfig;

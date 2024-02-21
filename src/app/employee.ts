@@ -3,5 +3,6 @@
 export interface Employee {
   "name":string,
   "position":string,
-  "salary":number
+  "salary":number,
+  "age":number
 }

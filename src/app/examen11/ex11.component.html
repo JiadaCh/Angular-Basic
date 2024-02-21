@@ -1,5 +1,20 @@
-<h1>Exercice 9</h1>
-<h2>*ngFor - Classes</h2>
+<h1>Examen </h1>
+<form [formGroup]="rForm" >
+  Name:
+  <input  type="text" formControlName="nombre" [(ngModel)]="employee.name">
+  <br>
+  Position:
+  <input type="text" formControlName="position" [(ngModel)]="employee.position" >
+  <br>
+  Salary:
+  <input  type="text" formControlName="salary" [(ngModel)]="employee.salary">
+  <br>
+  Age:
+  <input type="text" formControlName="age" [(ngModel)]="employee.age" >
+  <br>
+  <input type="submit" (click)="submit()" [disabled]="!rForm.valid">
+</form>
+<br>
 <b>Employees:</b>
 <div>
   Sort by
@@ -13,7 +28,7 @@
 </div>
 <table class="table-bordered table-hover">
   <tr>
-    <th>Name</th><th>Position</th><th>Salary</th><th>Age</th>
+    <th>Name</th><th>Position</th><th>Salary</th><th>Edad</th>
   </tr>
   <tr *ngFor="let e of employees">
     <td>{{ e.name }}</td>
